@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="round_corner_large">10dp</dimen>
+    <dimen name="round_corner_medium">8dp</dimen>
+    <dimen name="round_corner_small">6dp</dimen>
+
+    <dimen name="large_plus_extra_small">24dp</dimen>
+    <dimen name="large">16dp</dimen>
+    <dimen name="medium">14dp</dimen>
+    <dimen name="small">10dp</dimen>
+    <dimen name="extra_small">8dp</dimen>
+    <dimen name="micro">4dp</dimen>
+
+    <dimen name="text_extra_small">10sp</dimen>
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="text_medium">16sp</dimen>
+    <dimen name="text_large">18sp</dimen>
+    <dimen name="text_extra_large">20sp</dimen>
+
+</resources>

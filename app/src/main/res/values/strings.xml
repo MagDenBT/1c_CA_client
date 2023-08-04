@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">1c CA client</string>
+    <string name="screen_account">Аккаунт</string>
+    <string name="prime">Главная</string>
+    <string name="search">Поиск</string>
+    <string name="account">Аккаунт</string>
+    <string name="field_end_point">Адрес 1с ЦА</string>
+    <string name="field_password">Пароль пользователя 1с</string>
+    <string name="action_sign_in">Войти</string>
+    <string name="action_logout">Выйти</string>
+    <string name="field_repeat_password">Повторите пароль</string>
+    <string name="field_username">Имя пользователя 1с</string>
+    <string name="action_save">Сохранить</string>
+    <string name="action_cancel">Отмена</string>
+    <string name="action_go_back">Назад</string>
+    <string name="profile">Профиль</string>
+    <string name="dashboard">Дашборд</string>
+    <string name="prev_date">26.07.23 19:03:47</string>
+    <string name="prev_scenario">СТР Грозный Шейха Али Митаева 13 ЦБ MSSQL</string>
+</resources>

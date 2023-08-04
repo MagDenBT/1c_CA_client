@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="@dimen/small"
+    tools:context=".presentations.scenario.ScenarioDetailsFragment">
+
+    <ImageView
+        android:id="@+id/resultIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="@dimen/large"
+        app:layout_constraintBottom_toTopOf="@+id/dateTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/ic_ok" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/large"
+        app:layout_constraintBottom_toTopOf="@+id/scenarioTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultIcon"
+        tools:text="@string/prev_date" />
+
+    <TextView
+        android:id="@+id/scenarioTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/large"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constraintBottom_toTopOf="@+id/resultDescriptionTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateTextView"
+        tools:text="@string/prev_scenario" />
+
+    <TextView
+        android:id="@+id/resultDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/large_plus_extra_small"
+        android:ellipsize="end"
+        android:maxLines="25"
+        app:layout_constraintBottom_toTopOf="@+id/goBackButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scenarioTextView"
+        tools:text="@tools:sample/lorem/random" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/goBackButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/large"
+        android:text="@string/action_go_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultDescriptionTextView"
+        app:layout_constraintWidth_percent="0.3" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
