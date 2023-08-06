@@ -68,7 +68,7 @@
                 android:hint='@string/field_password'
                 app:boxStrokeWidth="0dp"
                 android:layout_marginTop="@dimen/medium"
-                app:layout_constraintBottom_toTopOf="@id/signInLogoutButton"
+                app:layout_constraintBottom_toTopOf="@id/saveOrSignInButton"
                 app:layout_constraintEnd_toEndOf="@id/caURLInput"
                 app:layout_constraintStart_toStartOf="@id/caURLInput"
                 app:layout_constraintTop_toBottomOf="@+id/usernameTextInput">
@@ -78,25 +78,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/gray_lite"
-                    android:imeOptions="actionNext"
+                    android:imeOptions="actionDone"
                     android:inputType="textPassword"
                     android:lines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
-
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/signInLogoutButton"
+                android:id="@+id/saveOrSignInButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:paddingVertical="@dimen/large"
                 android:layout_marginTop="@dimen/large_plus_extra_small"
                 android:text="@string/action_sign_in"
-                app:layout_constraintBottom_toTopOf="@id/progressBar"
+                app:layout_constraintBottom_toTopOf="@id/logoutButton"
                 app:layout_constraintEnd_toEndOf="@id/caURLInput"
                 app:layout_constraintStart_toStartOf="@id/caURLInput"
                 app:layout_constraintTop_toBottomOf="@+id/passwordTextInput" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/logoutButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/large"
+                android:text="@string/action_logout"
+                app:layout_constraintBottom_toTopOf="@id/progressBar"
+                app:layout_constraintEnd_toEndOf="@id/caURLInput"
+                app:layout_constraintStart_toStartOf="@id/caURLInput"
+                app:layout_constraintTop_toBottomOf="@+id/saveOrSignInButton" />
 
 
 
@@ -108,7 +117,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/signInLogoutButton"/>
+                app:layout_constraintTop_toBottomOf="@id/logoutButton"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

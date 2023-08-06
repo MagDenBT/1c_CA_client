@@ -1,20 +1,37 @@
 package ch.magdenbt.a1ccaclient.presentations.dashboard
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import ch.magdenbt.a1ccaclient.InitApp
 import ch.magdenbt.a1ccaclient.R
 import ch.magdenbt.a1ccaclient.Repositories
 import ch.magdenbt.a1ccaclient.databinding.FragmentDashboardBinding
+import ch.magdenbt.a1ccaclient.model.scenarios.ScenariosRepository
 import ch.magdenbt.a1ccaclient.utils.viewModelCreator
+import javax.inject.Inject
 
 class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
 
     private lateinit var binding: FragmentDashboardBinding
-    private val viewModel by viewModelCreator { DashboardViewModel(Repositories.scenariosRepository) }
+    @Inject
+    lateinit var scenariosRepository: ScenariosRepository
+    private val viewModel by viewModelCreator { DashboardViewModel(scenariosRepository) }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        (activity?.application as InitApp)
+            .appComponent
+            .dashboardComponent()
+            .create()
+            .inject(this)
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,7 +41,7 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
         binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val scenariosAdapter = ScenariosAdapter(ScenariosDiffUtil()) { id -> showDetails(id) }
         scenariosAdapter.submitList(viewModel.scenarios.value)
-
+        Log.d("scenariosRepository", scenariosRepository.toString())
         viewModel.scenarios.observe(viewLifecycleOwner) {
             scenariosAdapter.submitList(it)
             scenariosAdapter.notifyDataSetChanged()

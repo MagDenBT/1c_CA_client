@@ -7,8 +7,9 @@ import androidx.lifecycle.viewModelScope
 import ch.magdenbt.a1ccaclient.model.scenarios.ScenariosRepository
 import ch.magdenbt.a1ccaclient.model.scenarios.entities.Scenario
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class DashboardViewModel(private val scenariosRepository: ScenariosRepository) : ViewModel() {
+class DashboardViewModel (private val scenariosRepository: ScenariosRepository) : ViewModel() {
 
     private val _scenarios = MutableLiveData<List<Scenario>>()
     val scenarios:LiveData<List<Scenario>> = _scenarios

@@ -17,4 +17,5 @@
     <string name="dashboard">Дашборд</string>
     <string name="prev_date">26.07.23 19:03:47</string>
     <string name="prev_scenario">СТР Грозный Шейха Али Митаева 13 ЦБ MSSQL</string>
+    <string name="field_cannot_be_empty">Поле не может быть пустым!</string>
 </resources>

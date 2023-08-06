@@ -9,8 +9,10 @@ interface AppSettings {
     /**
      * @throws AccountNotFound
      */
-    fun getAccount(): Flow<Account>
+    suspend fun getAccount(): Account
 
     suspend fun saveAccount(account: Account)
+
+    suspend fun deleteAccount()
 
 }

@@ -16,8 +16,11 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.flow.toSet
 import kotlinx.coroutines.flow.transform
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class InMemoryScenariosRepository(private val dataSource: DataSource) : ScenariosRepository {
+@Singleton
+class InMemoryScenariosRepository @Inject constructor(private val dataSource: DataSource) : ScenariosRepository {
 
     private val _cache = MutableStateFlow<Set<Scenario>>(emptySet())
 
