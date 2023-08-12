@@ -5,6 +5,7 @@ import ch.magdenbt.a1ccaclient.model.scenarios.localsource.ScenariosLocalDataSou
 import ch.magdenbt.a1ccaclient.model.scenarios.remotesource.ScenariosRemoteDataSource
 import ch.magdenbt.a1ccaclient.utils.Resource
 import ch.magdenbt.a1ccaclient.utils.networkBoundResource
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -19,6 +20,7 @@ import javax.inject.Singleton
 class ScenariosRepositoryImp @Inject constructor(
     private val localDataSource: ScenariosLocalDataSource,
     private val remoteDataSource: ScenariosRemoteDataSource,
+    ioDispatcher: CoroutineDispatcher
 ) : ScenariosRepository {
 
     private val _scenarios : MutableStateFlow<Resource<List<Scenario>>> = MutableStateFlow(Resource.Loading<List<Scenario>>(
@@ -27,7 +29,7 @@ class ScenariosRepositoryImp @Inject constructor(
 
 
     init {
-        CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(ioDispatcher).launch {
             networkBoundResource(
                 query = { localDataSource.fetchData() },
                 fetch = {

@@ -16,7 +16,7 @@ import dagger.Module
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AppSubcomponents::class, GeneralModules::class])
+@Component(modules = [AppSubcomponents::class])
 interface AppComponent {
 
     @Component.Factory
@@ -29,7 +29,7 @@ interface AppComponent {
     fun profileComponent(): ProfileComponent.Factory
 }
 
-@Module(subcomponents = [DashboardComponent::class, ScenarioDetailsComponent::class, ProfileComponent::class], includes = [RoomModule::class])
+@Module(subcomponents = [DashboardComponent::class, ScenarioDetailsComponent::class, ProfileComponent::class], includes = [GeneralModules::class, RoomModule::class, UtilsModule::class ])
 class AppSubcomponents
 
 
