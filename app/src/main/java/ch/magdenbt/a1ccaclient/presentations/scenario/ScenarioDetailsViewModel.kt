@@ -17,8 +17,8 @@ class ScenarioDetailsViewModel(private val scenariosRepository: ScenariosReposit
 
     fun loadScenario(scenarioId: String) {
         viewModelScope.launch {
-            scenariosRepository.getScenario(ScenariosFilter(id = scenarioId))
-                .collect { _currentScenario.value = it }
+            scenariosRepository.getScenarios()
+                .collect { _currentScenario.value = it.data?.find { scenario ->  ScenariosFilter(id = scenarioId ).isMatch(scenario) } }
         }
     }
 }

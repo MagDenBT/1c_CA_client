@@ -1,15 +1,12 @@
 package ch.magdenbt.a1ccaclient.model.scenarios
 
 import ch.magdenbt.a1ccaclient.model.scenarios.entities.Scenario
-import ch.magdenbt.a1ccaclient.model.scenarios.entities.ScenariosFilter
+import ch.magdenbt.a1ccaclient.utils.Resource
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.StateFlow
 
 interface ScenariosRepository {
 
-    fun getScenarios(): StateFlow<Set<Scenario>>
+    fun getScenarios(): Flow<Resource<List<Scenario>>>
 
-    fun getScenario(filter: ScenariosFilter): Flow<Scenario>
-
-    fun updateScenarios()
+    suspend fun updateScenarios()
 }

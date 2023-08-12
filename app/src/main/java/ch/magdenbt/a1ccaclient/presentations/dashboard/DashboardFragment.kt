@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import ch.magdenbt.a1ccaclient.InitApp
 import ch.magdenbt.a1ccaclient.R
-import ch.magdenbt.a1ccaclient.Repositories
 import ch.magdenbt.a1ccaclient.databinding.FragmentDashboardBinding
 import ch.magdenbt.a1ccaclient.model.scenarios.ScenariosRepository
 import ch.magdenbt.a1ccaclient.utils.viewModelCreator
@@ -40,10 +39,10 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
     ): View? {
         binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val scenariosAdapter = ScenariosAdapter(ScenariosDiffUtil()) { id -> showDetails(id) }
-        scenariosAdapter.submitList(viewModel.scenarios.value)
+
         Log.d("scenariosRepository", scenariosRepository.toString())
-        viewModel.scenarios.observe(viewLifecycleOwner) {
-            scenariosAdapter.submitList(it)
+        viewModel.scenarios.observe(viewLifecycleOwner) {result ->
+            scenariosAdapter.submitList(result.data)
             scenariosAdapter.notifyDataSetChanged()
         }
 

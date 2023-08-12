@@ -11,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import ch.magdenbt.a1ccaclient.InitApp
 import ch.magdenbt.a1ccaclient.R
-import ch.magdenbt.a1ccaclient.Repositories
 import ch.magdenbt.a1ccaclient.databinding.FragmentScenarioDetailsBinding
 import ch.magdenbt.a1ccaclient.model.scenarios.ScenariosRepository
 import ch.magdenbt.a1ccaclient.model.scenarios.entities.ScenarioResult

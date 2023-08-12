@@ -12,7 +12,6 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import ch.magdenbt.a1ccaclient.R.*
 import ch.magdenbt.a1ccaclient.databinding.ActivityMainBinding
-import com.readystatesoftware.systembartint.SystemBarTintManager
 
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        initStatusBarForApiBelowKITKAT_WATCH()
+        //initStatusBarForApiBelowKITKAT_WATCH()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -34,14 +33,14 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun initStatusBarForApiBelowKITKAT_WATCH() {
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-            val tintManager = SystemBarTintManager(this)
-            tintManager.isStatusBarTintEnabled = true
-            tintManager.setTintColor(ContextCompat.getColor(this, color.black))
-        }
-
-    }
+//    private fun initStatusBarForApiBelowKITKAT_WATCH() {
+//
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+//            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+//            val tintManager = SystemBarTintManager(this)
+//            tintManager.isStatusBarTintEnabled = true
+//            tintManager.setTintColor(ContextCompat.getColor(this, color.black))
+//        }
+//
+//    }
 }
