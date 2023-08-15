@@ -15,8 +15,8 @@ class ScenariosAdapter(itemCallback: DiffUtil.ItemCallback<Scenario>, val onClic
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScenarioViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ScenarioItemBinding.inflate(inflater, parent, false)
-        return ScenarioViewHolder(binding, onClickListener)
+        val itemBinding = ScenarioItemBinding.inflate(inflater, parent, false)
+        return ScenarioViewHolder(itemBinding, onClickListener)
     }
 
     override fun onBindViewHolder(holder: ScenarioViewHolder, position: Int) {
@@ -24,14 +24,14 @@ class ScenariosAdapter(itemCallback: DiffUtil.ItemCallback<Scenario>, val onClic
     }
 }
 
-class ScenarioViewHolder(val binding: ScenarioItemBinding, val onClickListener : (String)-> Unit ) : RecyclerView.ViewHolder(binding.root) {
+class ScenarioViewHolder(val itemBinding: ScenarioItemBinding, val onClickListener : (String)-> Unit ) : RecyclerView.ViewHolder(itemBinding.root) {
 
     fun bind(scenario: Scenario) {
-        binding.dateTextView.text = scenario.date.toString()
-        binding.scenarioTextView.text = scenario.name
-        binding.resultDescriptionTextView.text = scenario.resultDescription
-        binding.resultIcon.setImageResource(getIconId(scenario.result))
-        binding.containerLayout.setOnClickListener {onClickListener(scenario.id)}
+        itemBinding.dateTextView.text = scenario.date.toString()
+        itemBinding.scenarioTextView.text = scenario.name
+        itemBinding.resultDescriptionTextView.text = scenario.resultDescription
+        itemBinding.resultIcon.setImageResource(getIconId(scenario.result))
+        itemBinding.containerLayout.setOnClickListener {onClickListener(scenario.id)}
     }
 
     private fun getIconId(scenarioResult: ScenarioResult): Int {

@@ -11,6 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -41,7 +42,7 @@ class ScenariosRepositoryImp @Inject constructor(
         }
     }
 
-   override fun getScenarios(): Flow<Resource<List<Scenario>>> {
+   override fun getScenarios(): StateFlow<Resource<List<Scenario>>> {
       return _scenarios
    }
 

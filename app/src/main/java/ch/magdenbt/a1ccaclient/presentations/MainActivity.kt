@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+
 //    private fun initStatusBarForApiBelowKITKAT_WATCH() {
 //
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
